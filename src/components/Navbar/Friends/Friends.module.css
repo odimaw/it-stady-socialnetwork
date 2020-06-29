@@ -1,0 +1,16 @@
+.friends {
+    padding-top: 20px;
+    text-align: center;
+  }
+
+.friends a {
+    text-decoration: none;
+    color: white;
+    font-size: 200%;
+}
+
+.allFriend {
+  display: grid; 
+  padding-top: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+}

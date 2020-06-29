@@ -6,15 +6,15 @@ import Message from './Message/Message';
 
 const Dialogs = (props) => {
 
-    let dialogsElements = props.dialogs
-        .map(d => <DialogItem name={d.name} id={d.id} />);
-    let messagesElements = props.messages
+    let myFriends = props.state.myFriends.friends
+        .map(d => <DialogItem name={d.name} id={d.id} avatar={d.avatar} />);
+    let messagesElements = props.state.dialogsPage.messages
         .map(m => <Message message={m.message} id='' />);
 
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                {dialogsElements}
+                {myFriends}
             </div>
             <div className={s.messages}>
                 {messagesElements}
