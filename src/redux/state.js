@@ -1,6 +1,10 @@
-import { rerenderEntireTree } from "../render";
+let store = {
 
-let state = {
+rerenderEntireTree() {
+  console.log('State was changed');
+},
+
+state: {
   profilePage: {
     posts: [
       { id: 1, message: 'Hi, how are you?', likesCount: 12 },
@@ -42,41 +46,65 @@ let state = {
     { id: 6, name: 'Valera', avatar: 'https://avatars.mds.yandex.net/get-pdb/1058492/5b6ad5d2-0e1e-449b-b37d-16d599307991/s1200?webp=false' },
   ],
 },
-}
+},
 
-export let addPost = () => {
+getState() {
+  return this.state;
+},
+
+addPost() {
  
   let newPost = {
     id: 5,
-    message: state.profilePage.newPostText,
+    message: store.state.profilePage.newPostText,
     likesCount: 0,
   };
-  state.profilePage.posts.push(newPost);
-  state.profilePage.newPostText = '';
-  rerenderEntireTree(state);
-}
+  store.state.profilePage.posts.push(newPost);
+  store.state.profilePage.newPostText = '';
+  store.rerenderEntireTree(store.state);
+},
 
-export let updateNewPostText = (newText) => {
+getAddPost() {
+  return this.addPost;
+},
+
+updateNewPostText(newText) {
    
-  state.profilePage.newPostText = newText;
-  rerenderEntireTree(state);
-}
+  store.state.profilePage.newPostText = newText;
+  store.rerenderEntireTree(store.state);
+},
 
-export let addMessage = () => {
+getUpdateNewPostText() {
+  return this.updateNewPostText;
+},
+
+addMessage() {
  
   let newMessage = {
     id: 5,
-    message: state.dialogsPage.newMessage,
+    message: store.state.dialogsPage.newMessage,
   };
-  state.dialogsPage.messages.push(newMessage);
-  state.dialogsPage.newMessage = '';
-  rerenderEntireTree(state);
-}
+  store.state.dialogsPage.messages.push(newMessage);
+  store.state.dialogsPage.newMessage = '';
+  store.rerenderEntireTree(store.state);
+},
 
-export let updateNewMessageText = (newText) => {
+getAddMessage() {
+  return this.addMessage;
+},
+
+updateNewMessageText(newText) {
    
-  state.dialogsPage.newMessage = newText;
-  rerenderEntireTree(state);
-}
+  store.state.dialogsPage.newMessage = newText;
+  store.rerenderEntireTree(store.state);
+},
 
-export default state;
+getUpdateNewMessageText() {
+  return this.updateNewMessageText;
+},
+
+subscribe(observer) {
+  this.rerenderEntireTree = observer;
+},
+};
+export default store;
