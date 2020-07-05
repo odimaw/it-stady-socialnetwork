@@ -11,15 +11,16 @@ import { Route, BrowserRouter } from "react-router-dom";
 // import { updateNewMessageText } from './redux/state';
 import store from './redux/state';
 
- let rerenderEntireTree = () => {
+let rerenderEntireTree = (state) => {
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App state={store.getState()} 
-          addPost={store.getAddPost()}
-          updateNewPostText={store.getUpdateNewPostText()}
-          addMessage={store.getAddMessage()}
-          updateNewMessageText={store.getUpdateNewMessageText()}
+        <App state={state}
+          dispatch={store.dispatch.bind(store)}
+          // addPost={store.getAddPost().bind(store)}
+          // updateNewPostText={store.getUpdateNewPostText().bind(store)}
+          // addMessage={store.getAddMessage().bind(store)}
+          // updateNewMessageText={store.getUpdateNewMessageText().bind(store)}
         />
       </BrowserRouter>
     </React.StrictMode>,
