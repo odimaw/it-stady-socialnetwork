@@ -1,3 +1,9 @@
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import friendsReducer from "./friends-reducer";
+
+
+
 let store = {
 
   _state: {
@@ -57,31 +63,15 @@ let store = {
   },
 
   dispatch(action) {
-    if (action.type === 'ADD-POST') {
-      let newPost = {
-        id: 5,
-        message: this._state.profilePage.newPostText,
-        likesCount: 0,
-      };
-      this._state.profilePage.posts.push(newPost);
-      this._state.profilePage.newPostText = '';
-      this._callSubscriber(this._state);
-    } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-      this._state.profilePage.newPostText = action.newText;
-      this._callSubscriber(this._state);
-    } else if (action.type === 'ADD-MESSAGE') {
-      let newMessage = {
-        id: 5,
-        message: this._state.dialogsPage.newMessage,
-      };
-      this._state.dialogsPage.messages.push(newMessage);
-      this._state.dialogsPage.newMessage = '';
-      this._callSubscriber(this._state);
-    } else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
-      this._state.dialogsPage.newMessage = action.newText;
-      this._callSubscriber(this._state);
-    }
+    this._state.profilePage =  profileReducer(this._state.profilePage, action);
+    this._state.dialogsPage =  dialogsReducer(this._state.dialogsPage, action);
+    this._state.myFriends =  friendsReducer(this._state.myFriends, action);
+    this._callSubscriber(this._state);
+
   },
 };
+
+
+
 export default store;
 window.store = store;

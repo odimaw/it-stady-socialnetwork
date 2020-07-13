@@ -3,13 +3,15 @@ import s from './Dialogs.module.css';
 import { NavLink } from "react-router-dom";
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
-import NewMessage from './NewMessage/NewMessage'
+import NewMessageContainer  from './NewMessage/NewMessageContainer';
 
 const Dialogs = (props) => {
 
-    let myFriends = props.state.myFriends.friends
+    let state = props.store.getState();
+    
+    let myFriends = state.myFriends.friends
         .map(d => <DialogItem name={d.name} id={d.id} avatar={d.avatar} />);
-    let messagesElements = props.state.dialogsPage.messages
+    let messagesElements = state.dialogsPage.messages
         .map(m => <Message message={m.message} id=''/>);
     return (
         <div className={s.dialogs}>
@@ -20,10 +22,11 @@ const Dialogs = (props) => {
                 {messagesElements}
             </div>
             <div>
-                <NewMessage 
-                 newMessage={props.dialogsPage.newMessage} 
+                <NewMessageContainer 
+                store={props.store}
+                //  newMessage={props.dialogsPage.newMessage} 
                  
-                 dispatch = {props.dispatch}
+                //  dispatch = {props.dispatch}
                 //  updateNewMessageText = { props.updateNewMessageText }
                 //  addMessage = { props.addMessage } 
                 />
