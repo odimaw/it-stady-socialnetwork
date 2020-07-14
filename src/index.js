@@ -10,30 +10,35 @@ import { Route, BrowserRouter } from "react-router-dom";
 // import { addMessage } from './redux/state';
 // import { updateNewMessageText } from './redux/state';
 import store from './redux/redux-store';
+import {Provider} from './StoreContext';
 
-let rerenderEntireTree = (state) => {
+let rerenderEntireTree = () => {
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App store={store}
-          state={state} // скорее всего не нужен
-          dispatch={store.dispatch.bind(store)}
+       <Provider store={store} >
+        <App 
+        
+        //   state={state} 
+        //   dispatch={store.dispatch.bind(store)}
+
         // addPost={store.getAddPost().bind(store)}
         // updateNewPostText={store.getUpdateNewPostText().bind(store)}
         // addMessage={store.getAddMessage().bind(store)}
         // updateNewMessageText={store.getUpdateNewMessageText().bind(store)}
         />
+        </Provider>
       </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
   )
 };
 
-rerenderEntireTree(store.getState());
+rerenderEntireTree();
 
 store.subscribe(() => {
-  let state = store.getState();
-  rerenderEntireTree(state);
+  // let state = store.getState();
+  rerenderEntireTree();
 }
 );
 

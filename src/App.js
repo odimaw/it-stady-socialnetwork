@@ -11,15 +11,16 @@ import Settings from './components/Settings/Settings';
 
 
 
-const App = (props) => {
+const App = () => {
   return (
       <div className='app-wrapper'>
         <Header />
-        <Navbar myFriends={props.store.getState().myFriends} />
+        <Navbar />
         <div className='app-wrapper-content'>
           <Route path='/dialogs' 
           render={ () => <Dialogs 
-            store={props.store} 
+            // store={props.store} 
+
             // state = {props.state}
             // dialogsPage = {props.state.dialogsPage} 
             // dispatch = {props.dispatch}
@@ -28,7 +29,8 @@ const App = (props) => {
             />} />
           <Route path='/profile'  
           render={ () => <Profile 
-            store={props.store}    />} />
+            // store={props.store}    
+            />} />
           <Route path='/news'  render={ () => <News /> } />
           <Route path='/music'  render={ () => <Music /> }  />
           <Route path='/settings'  render={ () => <Settings />}  />
