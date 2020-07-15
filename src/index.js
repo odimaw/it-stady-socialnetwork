@@ -10,7 +10,8 @@ import { Route, BrowserRouter } from "react-router-dom";
 // import { addMessage } from './redux/state';
 // import { updateNewMessageText } from './redux/state';
 import store from './redux/redux-store';
-import {Provider} from './StoreContext';
+// import {Provider} from './StoreContext';
+import {Provider} from 'react-redux';
 
 let rerenderEntireTree = () => {
   ReactDOM.render(

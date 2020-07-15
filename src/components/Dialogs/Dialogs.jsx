@@ -4,17 +4,16 @@ import { NavLink } from "react-router-dom";
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 import NewMessageContainer from './NewMessage/NewMessageContainer';
-import StoreContext from '../../StoreContext';
+// import StoreContext from '../../StoreContext';
 
-const Dialogs = () => {
-    return <StoreContext.Consumer>
-        {
-            (store) => {
-                let state = store.getState();
+const Dialogs = (props) => {
+ 
+           
+                // let state = store.getState();
 
-                let myFriends = state.myFriends.friends
+                let myFriends = props.friends
                     .map(d => <DialogItem name={d.name} id={d.id} avatar={d.avatar} />);
-                let messagesElements = state.dialogsPage.messages
+                let messagesElements = props.messages
                     .map(m => <Message message={m.message} id='' />);
 
 
@@ -37,8 +36,5 @@ const Dialogs = () => {
                     </div>
                 </div>)
             }
-        }
-    </StoreContext.Consumer>
-}
 
 export default Dialogs;

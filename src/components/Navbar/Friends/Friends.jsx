@@ -2,13 +2,11 @@ import React from 'react';
 import classes from './Friends.module.css';
 import { NavLink } from "react-router-dom";
 import Friend from './Friend/Friend';
-import StoreContext from '../../../StoreContext';
+// import StoreContext from '../../../StoreContext';
 
-const Friends = () => {
-    return (<StoreContext.Consumer>
-        {(store) => {
+const Friends = (props) => {
 
-            let MyFriends = store.getState().myFriends.friends
+            let MyFriends = props.friends
                 .map(f => <Friend name={f.name} avatar={f.avatar} id={f.id} />);
 
             return (
@@ -19,8 +17,7 @@ const Friends = () => {
                     </div>
                 </div>
             )
-        }}
-    </StoreContext.Consumer>)
-}
+        }
+
 
 export default Friends;
