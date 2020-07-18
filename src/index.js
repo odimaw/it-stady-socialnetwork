@@ -11,37 +11,35 @@ import { Route, BrowserRouter } from "react-router-dom";
 // import { updateNewMessageText } from './redux/state';
 import store from './redux/redux-store';
 // import {Provider} from './StoreContext';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 
-let rerenderEntireTree = () => {
+
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
-       <Provider store={store} >
-        <App 
-        
-        //   state={state} 
-        //   dispatch={store.dispatch.bind(store)}
+        <Provider store={store} >
+          <App
 
-        // addPost={store.getAddPost().bind(store)}
-        // updateNewPostText={store.getUpdateNewPostText().bind(store)}
-        // addMessage={store.getAddMessage().bind(store)}
-        // updateNewMessageText={store.getUpdateNewMessageText().bind(store)}
-        />
+          //   state={state} 
+          //   dispatch={store.dispatch.bind(store)}
+
+          // addPost={store.getAddPost().bind(store)}
+          // updateNewPostText={store.getUpdateNewPostText().bind(store)}
+          // addMessage={store.getAddMessage().bind(store)}
+          // updateNewMessageText={store.getUpdateNewMessageText().bind(store)}
+          />
         </Provider>
       </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
   )
-};
 
-rerenderEntireTree();
 
-store.subscribe(() => {
-  // let state = store.getState();
-  rerenderEntireTree();
-}
-);
+// store.subscribe(() => {
+//   // let state = store.getState();
+//   rerenderEntireTree();
+// }
+// );
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

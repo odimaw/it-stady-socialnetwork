@@ -12,9 +12,9 @@ const Dialogs = (props) => {
                 // let state = store.getState();
 
                 let myFriends = props.friends
-                    .map(d => <DialogItem name={d.name} id={d.id} avatar={d.avatar} />);
+                    .map(d => <DialogItem name={d.name} key={d.id} id={d.id} avatar={d.avatar} />);
                 let messagesElements = props.messages
-                    .map(m => <Message message={m.message} id='' />);
+                    .map(m => <Message message={m.message} key={m.id} id='' />);
 
 
                 return (<div className={s.dialogs}>
