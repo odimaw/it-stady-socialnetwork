@@ -3,36 +3,48 @@ import styles from './Users.module.css';
 import * as axios from 'axios';
 import userPhoto from '../../assets/images/user.png';
 
-let Users = (props) => {
+class Users extends React.Component {
+    componentDidMount() {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
+        .then(response => {
+            this.props.setUsers(response.data.items);
+            this.props.setTotalUsersCount(response.data.totalCount);
+        });
+    }
 
-    let getUsers = () => {
+    onPageChanged = (pageNumber) => {
+        this.props.setCurrentPage(pageNumber);
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
+        .then(response => {
+            this.props.setUsers(response.data.items);
+        });
+    }
 
-    
-    if (props.users.length === 0) {
-        
-        axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
-              
-                props.setUsers(response.data.items);
-            });
+    render() {
 
-        // props.setUsers([
-        //     { id: 1, photoUrl: 'https://24smi.org/public/media/celebrity/2015/09/21/1442831684-dmitrij-nagiev.jpg', followed: false, fullName: 'Dmitry', status: 'I am a boss', location: { city: 'Voronech', country: 'Russia' } },
-        //     { id: 2, photoUrl: 'https://24smi.org/public/media/celebrity/2015/09/21/1442831684-dmitrij-nagiev.jpg', followed: true, fullName: 'Sasha', status: 'I am a boss too', location: { city: 'Moscow', country: 'Russia' } },
-        //     { id: 3, photoUrl: 'https://24smi.org/public/media/celebrity/2015/09/21/1442831684-dmitrij-nagiev.jpg', followed: false, fullName: 'Andrew', status: 'I am a boss too', location: { city: 'Kiev', country: 'Ukraine' } },
-        //     { id: 4, photoUrl: 'https://24smi.org/public/media/celebrity/2015/09/21/1442831684-dmitrij-nagiev.jpg', followed: false, fullName: 'Sveta', status: 'I am a boss too', location: { city: 'Minsk', country: 'Belarussia' } },
-        // ]) 
-    } }
+        let pagesCount =Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+let pages = [];
+ for(let i=1; i <= pagesCount; i++) {
+     pages.push(i);
+ }
         return <div>
-            <button onClick={getUsers}>Get Users</button>
+            <div>
+               {pages.map(p => {
+                 return  <span className={this.props.currentPage === p && styles.selectedPage}
+                 onClick={(e) => { this.onPageChanged(p) }}>{p}</span> 
+               })}
+            
+            </div>
+            {/* <button onClick={this.getUsers}>Get Users</button> */}
             {
-                props.users.map(u => <div key={u.id}>
+                this.props.users.map(u => <div key={u.id}>
                     <span>
                         <div>
                             <img src={u.photos.small != null ? u.photos.small : userPhoto} className={styles.userPhoto} />
                         </div>
                         <div>
-                            {u.followed ? <button onClick={() => { props.unfollow(u.id) }} >Unfollow</button>
-                                : <button onClick={() => { props.follow(u.id) }}>Follow</button>}
+                            {u.followed ? <button onClick={() => { this.props.unfollow(u.id) }} >Unfollow</button>
+                                : <button onClick={() => { this.props.follow(u.id) }}>Follow</button>}
 
                         </div>
                     </span>
@@ -50,5 +62,6 @@ let Users = (props) => {
             }
         </div>
     }
+}
 
-    export default Users;
+export default Users;
