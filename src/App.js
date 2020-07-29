@@ -27,7 +27,7 @@ const App = () => {
             // addMessage = {props.addMessage}
             // updateNewMessageText = {props.updateNewMessageText}
             />} />
-          <Route path='/profile'  
+          <Route path='/profile/:userId?'  
           render={ () => <ProfileContainer 
             // store={props.store}    
             />} />
