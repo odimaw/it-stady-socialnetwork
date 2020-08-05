@@ -1,10 +1,11 @@
 import React from 'react';
 import s from './Dialogs.module.css';
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 import NewMessageContainer from './NewMessage/NewMessageContainer';
 // import StoreContext from '../../StoreContext';
+
 
 const Dialogs = (props) => {
  
@@ -15,6 +16,9 @@ const Dialogs = (props) => {
                     .map(d => <DialogItem name={d.name} key={d.id} id={d.id} avatar={d.avatar} />);
                 let messagesElements = props.messages
                     .map(m => <Message message={m.message} key={m.id} id='' />);
+
+                   if (!props.isAuth) return <Redirect to={'/login'} />;
+
 
 
                 return (<div className={s.dialogs}>

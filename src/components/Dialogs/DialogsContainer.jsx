@@ -12,6 +12,7 @@ let mapStateToProps = (state) => {
     return {
         friends: state.myFriends.friends,
         messages: state.dialogsPage.messages,
+        isAuth: state.auth.isAuth,
     }
   }
   let mapDispatchToProps = (dispatch) => {
