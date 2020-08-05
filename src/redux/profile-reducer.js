@@ -48,12 +48,12 @@ export const updateNewPostBodyCreator = (text) => ({
     newText: text,
 })
 
-export const getUserId = (userId) => {
+export const getUserProfile = (userId) => {
     return (dispatch) => {
         if (!userId) {
             userId = 2;
         }   
-        usersAPI.getUserId(userId)
+        usersAPI.getProfile(userId)
                 .then(data => {
                     dispatch(setUserProfile(data));
                 });
