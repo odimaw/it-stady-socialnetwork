@@ -6,6 +6,7 @@ import * as axios from 'axios';
 import Preloader from '../common/Preloader/Preloader';
 import { usersAPI } from '../../api/api';
 import { withAuthRedirect } from '../../hoc/withAuthRedirect';
+import { compose } from 'redux';
 
 class UsersAPIComponent extends React.Component {
     componentDidMount() {
@@ -64,11 +65,21 @@ let mapStateToProps = (state) => {
 
 
 
-const UsersContainer = connect(mapStateToProps, {
-    follow,
-    unfollow,
-    setCurrentPage,
-    toggleFollowingProgress,
-    getUsers,
-})(UsersAPIComponent);
-export default withAuthRedirect(UsersContainer);
+// const UsersContainer = connect(mapStateToProps, {
+//     follow,
+//     unfollow,
+//     setCurrentPage,
+//     toggleFollowingProgress,
+//     getUsers,
+// })(UsersAPIComponent);
+// export default withAuthRedirect(UsersContainer);
+
+export default compose(
+    withAuthRedirect,
+    connect(mapStateToProps, {
+        follow,
+        unfollow,
+        setCurrentPage,
+        toggleFollowingProgress,
+        getUsers})
+)(UsersAPIComponent);
