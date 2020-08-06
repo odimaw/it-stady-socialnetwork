@@ -5,6 +5,7 @@ import { follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, toggleI
 import * as axios from 'axios';
 import Preloader from '../common/Preloader/Preloader';
 import { usersAPI } from '../../api/api';
+import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 
 class UsersAPIComponent extends React.Component {
     componentDidMount() {
@@ -61,6 +62,8 @@ let mapStateToProps = (state) => {
     }
 }
 
+
+
 const UsersContainer = connect(mapStateToProps, {
     follow,
     unfollow,
@@ -68,4 +71,4 @@ const UsersContainer = connect(mapStateToProps, {
     toggleFollowingProgress,
     getUsers,
 })(UsersAPIComponent);
-export default UsersContainer;
+export default withAuthRedirect(UsersContainer);
