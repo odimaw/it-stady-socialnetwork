@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
+import { connect } from 'react-redux';
 
 
 class ProfileStatus extends React.Component {
@@ -8,7 +9,8 @@ class ProfileStatus extends React.Component {
     }
 
     activateEditMode = () => {
-      
+    //   debugger;
+      console.log('this', this);
         this.setState({
             editMode: true
         }) 
