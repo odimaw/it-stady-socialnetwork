@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
-import { Route, BrowserRouter } from "react-router-dom";
+import { Route } from "react-router-dom";
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
@@ -19,15 +19,10 @@ const App = () => {
         <Navbar />
         <div className='app-wrapper-content'>
           <Route path='/dialogs' 
-          render={ () => <DialogsContainer 
-           
-            />} />
+          render={ () => <DialogsContainer />} />
           <Route path='/profile/:userId?'  
-          render={ () => <ProfileContainer 
-            // store={props.store}    
-            />} />
+          render={ () => <ProfileContainer />} />
           <Route path='/news'  render={ () => <News /> } />
-          
           <Route path='/music'  render={ () => <Music /> }  />
           <Route path='/settings'  render={ () => <Settings />}  />
           <Route path='/users'  render={ () => <UsersContainer />}  />

@@ -7,11 +7,8 @@ const MyPosts = (props) => {
   let postsElements = props.posts
     .map(p => <Posts message={p.message} likesCount={p.likesCount} key={p.id} />);
 
-  // let newPostElement = React.createRef();
-
   let onAddPost = () => {
     props.addPost();
-    // props.dispatch(addPostActionCreator());
   }
 
   let onPostChange = (e) => {
@@ -23,8 +20,7 @@ const MyPosts = (props) => {
     <h3>My posts</h3>
     <div>
       <div>
-        <textarea 
-        // ref={newPostElement}
+        <textarea
           onChange={onPostChange}
           value={props.newPostText} />
       </div>

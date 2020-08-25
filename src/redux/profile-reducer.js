@@ -80,9 +80,6 @@ export const getStatus = (userId) => {
 }
 export const updateStatus = (status) => {
     return (dispatch) => {
-        // if (!userId) {
-        //     userId = 2;
-        // }
         profileAPI.updateStatus(status)
             .then(data => {
                 if (data.resultCode === 0) {

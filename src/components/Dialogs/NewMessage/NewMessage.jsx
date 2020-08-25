@@ -1,10 +1,7 @@
 import React from 'react';
 import s from './NewMessage.module.css';
-import { addMessageActionCreator, updateNewMessageBodyCreator } from '../../../redux/dialogs-reducer';
 
 const NewMessage = (props) => {
-
-  // let newPostElement = React.createRef();
 
   let addMessage = () => {
     props.addMessageActionCreator();
@@ -20,7 +17,6 @@ const NewMessage = (props) => {
     <div>
       <div>
         <textarea
-          // ref={newPostElement}
           onChange={onMessageChange}
           value={props.newMessage}
           placeholder='Enter your message'></textarea></div>
