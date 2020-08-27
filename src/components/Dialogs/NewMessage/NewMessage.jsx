@@ -1,12 +1,13 @@
 import React from 'react';
 import s from './NewMessage.module.css';
 import { Field, reduxForm } from 'redux-form';
+import { Textarea } from '../../common/FormsControls/FormsControls';
+import { required, maxLengthCreator } from '../../../utils/validators/validators';
 
 const NewMessage = (props) => {
 
   let addNewMessage = (values) => {
     props.addMessageActionCreator(values.newMessageBody);
-    // alert(values.newMessageBody);
   }
 
   return (<div className={s.postsBlock}>
@@ -17,10 +18,13 @@ const NewMessage = (props) => {
   </div>)
 };
 
+const maxLength = maxLengthCreator(50);
+
 const addMessageForm = (props) => {
   return (<form onSubmit={props.handleSubmit}>
     <div>
-      <Field component='textarea' name='newMessageBody' placeholder='Enter your message' />
+      <Field component={Textarea} validate={[required, maxLength]}
+        name='newMessageBody' placeholder='Enter your message' />
 
       <button>Add message</button></div>
   </form>
