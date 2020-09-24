@@ -14,7 +14,7 @@ let initialState = {
         { id: 6, message: 'Yo', likesCount: 24 },
     ],
     profile: null,
-    status: '',
+    status: '123',
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -48,7 +48,7 @@ export const setStatus = (status) => ({ type: SET_STATUS, status })
 export const getUserProfile = (userId) => {
     return (dispatch) => {
         if (!userId) {
-            userId = 2;
+            userId =  9445;
         }
         usersAPI.getProfile(userId)
             .then(data => {
@@ -59,7 +59,7 @@ export const getUserProfile = (userId) => {
 export const getStatus = (userId) => {
     return (dispatch) => {
         if (!userId) {
-            userId = 2;
+            userId =  9445;
         }
         profileAPI.getStatus(userId)
             .then(data => {
