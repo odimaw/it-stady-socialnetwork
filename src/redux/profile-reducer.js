@@ -1,5 +1,6 @@
 import { usersAPI, profileAPI } from "../api/api";
 
+
 const ADD_POST = 'ADD-POST';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_STATUS = 'SET_STATUS';
@@ -47,9 +48,9 @@ export const setStatus = (status) => ({ type: SET_STATUS, status })
 
 export const getUserProfile = (userId) => {
     return (dispatch) => {
-        if (!userId) {
-            userId =  9445;
-        }
+        // if (!userId) {
+        //     userId =  9445;
+        // }
         usersAPI.getProfile(userId)
             .then(data => {
                 dispatch(setUserProfile(data));
@@ -58,9 +59,9 @@ export const getUserProfile = (userId) => {
 }
 export const getStatus = (userId) => {
     return (dispatch) => {
-        if (!userId) {
-            userId =  9445;
-        }
+        // if (!userId) {
+        //     userId =  9445;
+        // }
         profileAPI.getStatus(userId)
             .then(data => {
                 dispatch(setStatus(data));
