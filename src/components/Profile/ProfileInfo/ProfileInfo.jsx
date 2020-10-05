@@ -10,9 +10,6 @@ const ProfileInfo = (props) => {
     }
 
     return <div>
-        {/* <div>
-            <img src='https://images.wallpaperscraft.ru/image/pliazh_palma_okean_127914_300x168.jpg'></img>
-        </div> */}
         <div className={s.descriptionBlock}>
             <img src={props.profile.photos.large}/>
             
