@@ -2,7 +2,7 @@
   "name": "react-kabzda-1",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/odimaw/it-stady-socialnetwork",
+  "homepage": "https://odimaw.github.io/it-stady-socialnetwork",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
