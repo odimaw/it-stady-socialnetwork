@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/it-stady-socialnetwork/static/css/main.631d42b8.chunk.css",
-    "main.js": "/it-stady-socialnetwork/static/js/main.822bfbc1.chunk.js",
-    "main.js.map": "/it-stady-socialnetwork/static/js/main.822bfbc1.chunk.js.map",
+    "main.js": "/it-stady-socialnetwork/static/js/main.54c3cdea.chunk.js",
+    "main.js.map": "/it-stady-socialnetwork/static/js/main.54c3cdea.chunk.js.map",
     "runtime-main.js": "/it-stady-socialnetwork/static/js/runtime-main.5de6526d.js",
     "runtime-main.js.map": "/it-stady-socialnetwork/static/js/runtime-main.5de6526d.js.map",
     "static/js/2.7effb207.chunk.js": "/it-stady-socialnetwork/static/js/2.7effb207.chunk.js",
@@ -14,7 +14,7 @@
     "static/js/4.e697c90c.chunk.js": "/it-stady-socialnetwork/static/js/4.e697c90c.chunk.js",
     "static/js/4.e697c90c.chunk.js.map": "/it-stady-socialnetwork/static/js/4.e697c90c.chunk.js.map",
     "index.html": "/it-stady-socialnetwork/index.html",
-    "precache-manifest.59a3d1fc8a268bffa31433945c30964f.js": "/it-stady-socialnetwork/precache-manifest.59a3d1fc8a268bffa31433945c30964f.js",
+    "precache-manifest.065ad3bd8aea413d206ea3f2a07a5f68.js": "/it-stady-socialnetwork/precache-manifest.065ad3bd8aea413d206ea3f2a07a5f68.js",
     "service-worker.js": "/it-stady-socialnetwork/service-worker.js",
     "static/css/3.2a4b83bc.chunk.css.map": "/it-stady-socialnetwork/static/css/3.2a4b83bc.chunk.css.map",
     "static/css/4.b0fab986.chunk.css.map": "/it-stady-socialnetwork/static/css/4.b0fab986.chunk.css.map",
@@ -26,6 +26,6 @@
     "static/js/runtime-main.5de6526d.js",
     "static/js/2.7effb207.chunk.js",
     "static/css/main.631d42b8.chunk.css",
-    "static/js/main.822bfbc1.chunk.js"
+    "static/js/main.54c3cdea.chunk.js"
   ]
 }

@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2393bdbc6181e7d31528bed42415b25f",
+    "revision": "f96c14c243e1a43d015e3190dfe031f7",
     "url": "/it-stady-socialnetwork/index.html"
   },
   {
@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/it-stady-socialnetwork/static/css/4.b0fab986.chunk.css"
   },
   {
-    "revision": "f07a0775176268e604aa",
+    "revision": "7734cf28a2229ed829ce",
     "url": "/it-stady-socialnetwork/static/css/main.631d42b8.chunk.css"
   },
   {
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/it-stady-socialnetwork/static/js/4.e697c90c.chunk.js"
   },
   {
-    "revision": "f07a0775176268e604aa",
-    "url": "/it-stady-socialnetwork/static/js/main.822bfbc1.chunk.js"
+    "revision": "7734cf28a2229ed829ce",
+    "url": "/it-stady-socialnetwork/static/js/main.54c3cdea.chunk.js"
   },
   {
     "revision": "085f0986b6cfdf8f3a49",
