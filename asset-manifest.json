@@ -1,31 +1,31 @@
 {
   "files": {
     "main.css": "/it-stady-socialnetwork/static/css/main.631d42b8.chunk.css",
-    "main.js": "/it-stady-socialnetwork/static/js/main.54c3cdea.chunk.js",
-    "main.js.map": "/it-stady-socialnetwork/static/js/main.54c3cdea.chunk.js.map",
-    "runtime-main.js": "/it-stady-socialnetwork/static/js/runtime-main.5de6526d.js",
-    "runtime-main.js.map": "/it-stady-socialnetwork/static/js/runtime-main.5de6526d.js.map",
-    "static/js/2.7effb207.chunk.js": "/it-stady-socialnetwork/static/js/2.7effb207.chunk.js",
-    "static/js/2.7effb207.chunk.js.map": "/it-stady-socialnetwork/static/js/2.7effb207.chunk.js.map",
+    "main.js": "/it-stady-socialnetwork/static/js/main.ecfe42d7.chunk.js",
+    "main.js.map": "/it-stady-socialnetwork/static/js/main.ecfe42d7.chunk.js.map",
+    "runtime-main.js": "/it-stady-socialnetwork/static/js/runtime-main.74220a85.js",
+    "runtime-main.js.map": "/it-stady-socialnetwork/static/js/runtime-main.74220a85.js.map",
+    "static/js/2.27f6d787.chunk.js": "/it-stady-socialnetwork/static/js/2.27f6d787.chunk.js",
+    "static/js/2.27f6d787.chunk.js.map": "/it-stady-socialnetwork/static/js/2.27f6d787.chunk.js.map",
     "static/css/3.2a4b83bc.chunk.css": "/it-stady-socialnetwork/static/css/3.2a4b83bc.chunk.css",
     "static/js/3.c6df41bb.chunk.js": "/it-stady-socialnetwork/static/js/3.c6df41bb.chunk.js",
     "static/js/3.c6df41bb.chunk.js.map": "/it-stady-socialnetwork/static/js/3.c6df41bb.chunk.js.map",
     "static/css/4.b0fab986.chunk.css": "/it-stady-socialnetwork/static/css/4.b0fab986.chunk.css",
-    "static/js/4.e697c90c.chunk.js": "/it-stady-socialnetwork/static/js/4.e697c90c.chunk.js",
-    "static/js/4.e697c90c.chunk.js.map": "/it-stady-socialnetwork/static/js/4.e697c90c.chunk.js.map",
+    "static/js/4.4d48546e.chunk.js": "/it-stady-socialnetwork/static/js/4.4d48546e.chunk.js",
+    "static/js/4.4d48546e.chunk.js.map": "/it-stady-socialnetwork/static/js/4.4d48546e.chunk.js.map",
     "index.html": "/it-stady-socialnetwork/index.html",
-    "precache-manifest.065ad3bd8aea413d206ea3f2a07a5f68.js": "/it-stady-socialnetwork/precache-manifest.065ad3bd8aea413d206ea3f2a07a5f68.js",
+    "precache-manifest.349f50e96e682ddf351890b996b71391.js": "/it-stady-socialnetwork/precache-manifest.349f50e96e682ddf351890b996b71391.js",
     "service-worker.js": "/it-stady-socialnetwork/service-worker.js",
     "static/css/3.2a4b83bc.chunk.css.map": "/it-stady-socialnetwork/static/css/3.2a4b83bc.chunk.css.map",
     "static/css/4.b0fab986.chunk.css.map": "/it-stady-socialnetwork/static/css/4.b0fab986.chunk.css.map",
     "static/css/main.631d42b8.chunk.css.map": "/it-stady-socialnetwork/static/css/main.631d42b8.chunk.css.map",
-    "static/js/2.7effb207.chunk.js.LICENSE.txt": "/it-stady-socialnetwork/static/js/2.7effb207.chunk.js.LICENSE.txt",
+    "static/js/2.27f6d787.chunk.js.LICENSE.txt": "/it-stady-socialnetwork/static/js/2.27f6d787.chunk.js.LICENSE.txt",
     "static/media/preloader.gif": "/it-stady-socialnetwork/static/media/preloader.a61850fd.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.5de6526d.js",
-    "static/js/2.7effb207.chunk.js",
+    "static/js/runtime-main.74220a85.js",
+    "static/js/2.27f6d787.chunk.js",
     "static/css/main.631d42b8.chunk.css",
-    "static/js/main.54c3cdea.chunk.js"
+    "static/js/main.ecfe42d7.chunk.js"
   ]
 }
