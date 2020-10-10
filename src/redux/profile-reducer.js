@@ -1,3 +1,4 @@
+import { stopSubmit } from "redux-form";
 import { usersAPI, profileAPI } from "../api/api";
 
 
@@ -43,7 +44,7 @@ const profileReducer = (state = initialState, action) => {
         case DELETE_POST:
             return { ...state, posts: state.posts.filter(p => p.id != action.postId) }
         case SAVE_PHOTO_SUCCESS:
-            return { ...state, profile: {...state.profile, photos: action.photos}  }
+            return { ...state, profile: { ...state.profile, photos: action.photos } }
         default:
             return state;
     }
@@ -71,13 +72,24 @@ export const updateStatus = (status) => async (dispatch) => {
     }
 }
 
-
 export const savePhoto = (file) => async (dispatch) => {
-  
     let data = await profileAPI.savePhoto(file);
     if (data.resultCode === 0) {
-        debugger;
         dispatch(savePhotoSuccess(data.data.photos));
     }
 }
+
+export const saveProfile = (profile) => async (dispatch, getState) => {
+    const userId = getState().auth.id;
+    let data = await profileAPI.saveProfile(profile);
+    if (data.resultCode === 0) {
+        dispatch(getUserProfile(userId));
+
+    } else {
+        // lДобавить определение в какой именно форме была ошибка.
+        dispatch(stopSubmit('edit-profile', { _error: data.messages[0]  }));
+        return Promise.reject(data.messages[0]);
+    }
+}
+
 export default profileReducer;
