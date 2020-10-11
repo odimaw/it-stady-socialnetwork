@@ -70,7 +70,6 @@ export const getCaptcha = () => {
         const response = await securityAPI.getCaptchaUrl();
         const captchaURL = response.url;
             dispatch(getCaptchaUrlSuccess(captchaURL));
-            debugger;
     };
 }
 

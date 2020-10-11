@@ -66,9 +66,13 @@ export const getStatus = (userId) => async (dispatch) => {
 }
 
 export const updateStatus = (status) => async (dispatch) => {
-    let data = await profileAPI.updateStatus(status);
-    if (data.resultCode === 0) {
-        dispatch(setStatus(status));
+    try {
+        let data = await profileAPI.updateStatus(status);
+        if (data.resultCode === 0) {
+            dispatch(setStatus(status));
+        }
+    } catch (error) {
+        //
     }
 }
 
@@ -87,7 +91,7 @@ export const saveProfile = (profile) => async (dispatch, getState) => {
 
     } else {
         // lДобавить определение в какой именно форме была ошибка.
-        dispatch(stopSubmit('edit-profile', { _error: data.messages[0]  }));
+        dispatch(stopSubmit('edit-profile', { _error: data.messages[0] }));
         return Promise.reject(data.messages[0]);
     }
 }
