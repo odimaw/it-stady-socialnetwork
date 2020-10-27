@@ -22,7 +22,6 @@ const authReducer = (state = initialState, action: any): InitialStateType => {
       return {
         ...state,
         ...action.payload,
-        id: 'dsd',
       }
 
     default:
