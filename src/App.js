@@ -18,10 +18,10 @@ const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsCo
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
 
 class App extends Component {
-  catchAllUnhandledErrors = (reason, promise) => {
-    alert('Some error occured');
-  
-  }
+  // catchAllUnhandledErrors = (reason, promise) => {
+  //   alert('Some error occured');
+
+  // }
   componentDidMount() {
     this.props.initializeApp();
     window.addEventListener('unhandledrejection', this.catchAllUnhandledErrors);
@@ -40,7 +40,7 @@ class App extends Component {
         <div className='app-wrapper-content'>
           <React.Suspense fallback={<Preloader />}>
             <Switch>
-            <Route exact path='/'
+              <Route exact path='/'
                 render={() => <Redirect to={'/profile'} />} />
               <Route path='/dialogs'
                 render={() => <DialogsContainer />} />
@@ -52,7 +52,7 @@ class App extends Component {
               <Route path='/users' render={() => <UsersContainer />} />
               <Route path='/login' render={() => <LoginPage />} />
               <Route path='*' render={() => <div>404 NOT FOUND</div>} />
-            
+
             </Switch>
           </React.Suspense>
         </div>
