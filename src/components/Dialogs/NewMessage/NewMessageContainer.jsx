@@ -1,5 +1,5 @@
 import s from './NewMessage.module.css';
-import { addMessageActionCreator } from '../../../redux/dialogs-reducer';
+import { actions } from '../../../redux/dialogs-reducer';
 import NewMessage from './NewMessage';
 import { connect } from 'react-redux';
 
@@ -12,7 +12,7 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
   return {
     addMessageActionCreator: (addNewMessage) => {
-      dispatch(addMessageActionCreator(addNewMessage));
+      dispatch(actions.addMessageActionCreator(addNewMessage));
     }
   }
 }
